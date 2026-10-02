@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Antojitos las 5 Marías</title>
+<meta name="description" content="El auténtico sazón para disfrutar por las noches">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--c:#C46835;--tinta:#16181a;--suave:#5d6166;--fondo:#f6f4ef;--linea:#e2ded4}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--fondo);color:var(--tinta);line-height:1.6;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+  nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--fondo) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+  .logo{font-family:Fraunces,serif;font-size:1.3rem;font-weight:600}
+  nav a.mini{font-size:.9rem;font-weight:500;padding:8px 16px;border-radius:99px;background:var(--tinta);color:#fff}
+
+  .hero{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:end;padding:72px 0 56px}
+  .etiqueta{display:inline-block;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--c);font-weight:600;margin-bottom:18px}
+  h1{font-family:Fraunces,serif;font-weight:400;font-size:clamp(2.6rem,6.5vw,5rem);line-height:1.02;letter-spacing:-.02em}
+  h1 em{font-style:italic;color:var(--c)}
+  .intro{font-size:1.08rem;color:var(--suave);max-width:46ch;margin:24px 0 32px}
+  .btns{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:99px;font-weight:600;background:var(--c);color:#fff;transition:transform .2s,box-shadow .2s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px color-mix(in srgb,var(--c) 35%,transparent)}
+  .btn.ghost{background:transparent;color:var(--tinta);border:1px solid var(--tinta)}
+
+  .foto{background:color-mix(in srgb,var(--c) 18%,#ddd);border-radius:18px;display:grid;place-items:center;color:color-mix(in srgb,var(--c) 70%,#000);font-weight:500;font-size:.95rem;position:relative;overflow:hidden}
+  .foto::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);transform:translateX(-100%);animation:brillo 3.5s infinite}
+  @keyframes brillo{to{transform:translateX(100%)}}
+  .hero .foto{aspect-ratio:3/4}
+
+  .franja{display:grid;grid-template-columns:.6fr 1fr .8fr;gap:16px;margin-bottom:96px}
+  .franja .foto{aspect-ratio:4/3}
+  .franja .foto:nth-child(2){aspect-ratio:auto;margin-top:48px}
+
+  .bloque{display:grid;grid-template-columns:.4fr 1fr;gap:48px;padding:72px 0;border-top:1px solid var(--linea)}
+  h2{font-family:Fraunces,serif;font-weight:400;font-size:clamp(1.8rem,3.5vw,2.6rem);line-height:1.1}
+  .servicios{display:grid;gap:0}
+  .serv{display:grid;grid-template-columns:56px 1fr;column-gap:20px;padding:26px 0;border-bottom:1px solid var(--linea)}
+  .serv .num{grid-row:span 2;font-family:Fraunces,serif;font-size:1.4rem;color:var(--c)}
+  .serv h3{font-size:1.15rem;font-weight:600}
+  .serv p{color:var(--suave)}
+
+  .razones{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .razones li{background:#fff;border:1px solid var(--linea);border-radius:16px;padding:28px 22px;font-weight:500;position:relative}
+  .razones li::before{content:"";display:block;width:28px;height:3px;background:var(--c);margin-bottom:18px;border-radius:2px}
+
+  .cierre{background:var(--tinta);color:#fff;border-radius:28px;padding:64px 48px;margin:48px 0 72px;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center}
+  .cierre h2{color:#fff}
+  .cierre .horario{color:#b9bcc0;margin-top:10px}
+  .cierre .btn.ghost{color:#fff;border-color:#fff}
+
+  footer{padding:28px 0 40px;font-size:.85rem;color:var(--suave);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .demo-tag{position:fixed;bottom:16px;left:16px;z-index:20;background:#fff;border:1px solid var(--linea);border-radius:99px;padding:8px 14px;font-size:.78rem;box-shadow:0 6px 18px rgba(0,0,0,.08)}
+  .demo-tag b{letter-spacing:.2em;font-family:Fraunces,serif}
+
+  .wa{position:fixed;right:18px;bottom:18px;z-index:20;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 24px rgba(37,211,102,.4);animation:pulso 2.4s infinite}
+  @keyframes pulso{50%{transform:scale(1.07)}}
+
+  .rev{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+  .rev.ok{opacity:1;transform:none}
+
+  @media (max-width:820px){
+    .hero,.bloque,.cierre{grid-template-columns:1fr}
+    .hero{padding-top:40px;gap:32px}
+    .hero .foto{aspect-ratio:4/3}
+    .franja{grid-template-columns:1fr 1fr}
+    .franja .foto:nth-child(2){margin-top:0}
+    .franja .foto:nth-child(3){grid-column:span 2}
+    .razones{grid-template-columns:1fr}
+    .cierre{padding:40px 24px}
+    .bloque{gap:20px;padding:56px 0}
+  }
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <span class="logo">Antojitos las 5 Marías</span>
+  <a class="mini" href="https://wa.me/528123256381?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Antojitos%20las%205%20Mar%C3%ADas%20y%20quiero%20informaci%C3%B3n." target="_blank" rel="noopener">Contacto</a>
+</div></nav>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="rev">
+      <span class="etiqueta">comida</span>
+      <h1>El auténtico sazón para disfrutar por las noches</h1>
+      <p class="intro">En Antojitos las 5 Marías consentimos su paladar con platillos tradicionales preparados al momento con la mejor dedicación. Es el espacio perfecto para reunirse en familia o con amigos y calmar el antojo nocturno.</p>
+      <div class="btns">
+        <a class="btn" href="https://wa.me/528123256381?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Antojitos%20las%205%20Mar%C3%ADas%20y%20quiero%20informaci%C3%B3n." target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=25.6532166,-100.1845519" target="_blank" rel="noopener">Cómo llegar</a>
+      </div>
+    </div>
+    <div class="foto rev">Foto 1</div>
+  </section>
+
+  <section class="franja">
+    <div class="foto rev">Foto 2</div>
+    <div class="foto rev">Foto 3</div>
+    <div class="foto rev">Foto 4</div>
+  </section>
+
+  <section class="bloque">
+    <h2 class="rev">Lo que<br>hacemos</h2>
+    <div class="servicios rev"><article class="serv"><span class="num">01</span><h3>Cenas y antojitos</h3><p>Gran variedad de opciones tradicionales preparadas al instante para satisfacer su apetito nocturno.</p></article><article class="serv"><span class="num">02</span><h3>Pedidos para llevar</h3><p>Empacamos sus alimentos con cuidado para que lleguen calientes y listos para disfrutar en casa.</p></article><article class="serv"><span class="num">03</span><h3>Atención para eventos</h3><p>Llevamos el sabor y la calidad de nuestros antojitos directamente a sus celebraciones especiales.</p></article></div>
+  </section>
+
+  <section class="bloque">
+    <h2 class="rev">Por qué<br>elegirnos</h2>
+    <ul class="razones rev"><li>Sazón casero con ingredientes frescos cada noche</li><li>Servicio amable, rápido y atento a su mesa</li><li>El punto de encuentro perfecto para cenar rico</li></ul>
+  </section>
+
+  <section class="cierre rev">
+    <div>
+      <h2>Visítanos o escríbenos hoy</h2>
+      <p class="horario">Horario: Mo-Su 18:00-00:00</p>
+    </div>
+    <div class="btns">
+      <a class="btn" href="https://wa.me/528123256381?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Antojitos%20las%205%20Mar%C3%ADas%20y%20quiero%20informaci%C3%B3n." target="_blank" rel="noopener">Pedir por WhatsApp</a>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Antojitos las 5 Marías</span>
+    <span>Sitio creado por crusol</span>
+  </footer>
+</main>
+
+<div class="demo-tag">Vista previa por <b>CRUSOL</b></div>
+<a class="wa" href="https://wa.me/528123256381?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Antojitos%20las%205%20Mar%C3%ADas%20y%20quiero%20informaci%C3%B3n." target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>
+</a>
+
+<script>
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('ok'); io.unobserve(e.target); }
+  }), {threshold: .12});
+  document.querySelectorAll('.rev').forEach((el, i) => {
+    el.style.transitionDelay = (i % 3) * 90 + 'ms';
+    io.observe(el);
+  });
+</script>
+</body>
+</html>
