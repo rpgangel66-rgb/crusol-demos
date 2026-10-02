@@ -6,167 +6,215 @@
 <title>Estética Norma Hurtado</title>
 <meta name="description" content="Realza tu belleza natural con confianza">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&amp;family=Jost:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
 <style>
-  :root{--fondo:#f5ebe6;--tinta:#3d1c33;--acento:#b5727f;--suave:#6e5560;--linea:#dccbc4}
+  :root{
+    --bg:#1c1718;--ink:#f3e9e4;--accent:#e3a7a0;--on-accent:#1c1718;--panel:#f3e9e4;--on-panel:#1c1718;--accent-t:#e3a7a0;--acc-p:#1c1718;--on-acc-p:#f3e9e4;
+    --soft:color-mix(in srgb,var(--ink) 66%,var(--bg));
+    --line:color-mix(in srgb,var(--ink) 15%,var(--bg));
+    --fd:'Cormorant Garamond',Georgia,serif;--fb:'Jost',system-ui,sans-serif;--wd:500;--tt:none;--ls:-.01em;--k:1.12;--fi:italic;
+    --rb:999px;--rf:28px;
+  }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{font-family:Jost,system-ui,sans-serif;font-weight:300;background:var(--fondo);color:var(--tinta);line-height:1.7;overflow-x:hidden}
+  html{scroll-behavior:smooth;overflow-x:hidden;overflow-x:clip}
+  body{font-family:var(--fb);background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:clip;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
   img{display:block;width:100%;height:100%;object-fit:cover}
-  .wrap{max-width:1200px;margin:0 auto;padding:0 20px}
-  .serif{font-family:"Cormorant Garamond",serif;font-weight:400}
-
-  nav{display:flex;justify-content:space-between;align-items:center;padding:26px 20px;max-width:1200px;margin:0 auto}
-  nav .marca{font-family:"Cormorant Garamond",serif;font-size:1.6rem;font-style:italic}
-  nav a{font-weight:400;border-bottom:1px solid currentColor;padding-bottom:2px}
-
-  .hero{display:grid;grid-template-columns:7fr 5fr;gap:40px;align-items:center;padding:20px 20px 120px;position:relative}
-  .hero.flip{grid-template-columns:5fr 7fr}
-  .hero.flip .texto{order:2}
-  .giro{font-weight:400;color:var(--acento);margin-bottom:18px}
-  h1{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:clamp(3.2rem,8.5vw,7.2rem);line-height:.95;letter-spacing:-.02em}
-  .intro{font-size:1.12rem;max-width:40ch;margin:28px 0 36px;color:var(--suave)}
-  .btns{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
-  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--tinta);color:var(--fondo);padding:16px 30px;border-radius:99px;font-weight:400;letter-spacing:.02em;transition:background .25s}
-  .btn:hover{background:var(--acento)}
-  .btn svg{width:19px;height:19px}
-  .btn.ghost{background:transparent;color:var(--tinta);border:1px solid var(--linea)}
-  .arco{position:relative;justify-self:center;width:100%;max-width:460px}
-  .arco .foto{aspect-ratio:3/4;border-radius:999px 999px 18px 18px;overflow:hidden}
-  .arco .foto img{animation:revelar 1.6s cubic-bezier(.2,.7,.2,1) forwards;transform:scale(1.15);opacity:0}
-  @keyframes revelar{to{transform:scale(1);opacity:1}}
-  .arco .mini{position:absolute;width:42%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:8px solid var(--fondo);bottom:-40px;left:-56px}
-  .arco .firma{position:absolute;right:-8px;top:24px;writing-mode:vertical-rl;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.1rem;color:var(--suave)}
-
-  .manifiesto{padding:40px 20px 110px;text-align:center}
-  .manifiesto p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(1.8rem,4.2vw,3.2rem);line-height:1.2;max-width:24ch;margin:0 auto}
-
-  .servicios{display:grid;grid-template-columns:4fr 8fr;gap:64px;padding:0 20px 120px}
-  h2{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:clamp(2.4rem,5vw,4rem);line-height:1}
-  .servicios .lado p{color:var(--suave);margin-top:18px;max-width:30ch}
-  .carta{display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
-  .carta article{padding:26px 0;border-top:1px solid var(--linea)}
-  .carta h3{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:1.7rem;line-height:1.15}
-  .carta p{color:var(--suave);margin-top:6px}
-
-  .galeria{padding-bottom:120px}
-  .galeria .pista{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 20px 18px;scrollbar-width:thin}
-  .galeria figure{flex:0 0 min(78vw,380px);aspect-ratio:3/4;border-radius:18px;overflow:hidden;scroll-snap-align:start}
-  .galeria figure:nth-child(even){margin-top:56px}
-  .galeria .cabeza{display:flex;justify-content:space-between;align-items:end;padding:0 20px 36px;max-width:1200px;margin:0 auto}
-  .galeria .cabeza span{color:var(--suave)}
-
-  .visita{background:var(--tinta);color:var(--fondo);border-radius:40px 40px 0 0;padding:100px 20px 120px}
-  .visita .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;padding:0;align-items:end}
-  .visita ul{list-style:none;margin-top:28px}
-  .visita li{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.16);font-family:"Cormorant Garamond",serif;font-size:1.45rem}
-  .visita .horario{opacity:.75;margin-bottom:26px}
-  .visita .btn{background:var(--fondo);color:var(--tinta)}
-  .visita .btn:hover{background:var(--acento);color:var(--fondo)}
-  .visita .btn.ghost{background:transparent;color:var(--fondo);border-color:rgba(255,255,255,.3)}
-
-  footer{background:var(--tinta);color:var(--fondo);opacity:1;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:0 20px 96px;font-size:.88rem}
-  footer span{opacity:.6}
-  .wa{position:fixed;right:18px;bottom:18px;z-index:20;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 24px rgba(0,0,0,.2)}
-  .demo-tag{position:fixed;left:16px;bottom:18px;z-index:20;background:var(--fondo);color:var(--tinta);font-size:.78rem;padding:8px 14px;border-radius:99px;box-shadow:0 6px 18px rgba(0,0,0,.08)}
-  .demo-tag b{letter-spacing:.22em;font-weight:500}
-
-  @media (max-width:860px){
-    .hero,.hero.flip{grid-template-columns:1fr;padding-bottom:100px}
-    .hero.flip .texto{order:0}
-    .arco{max-width:340px}
-    .arco .mini{left:-12px}
-    .servicios{grid-template-columns:1fr;gap:28px}
-    .carta{grid-template-columns:1fr}
-    .visita .wrap{grid-template-columns:1fr}
-  }
+  .wrap{max-width:1200px;margin:0 auto;padding-left:20px;padding-right:20px}
+  .d{font-family:var(--fd);font-weight:var(--wd);text-transform:var(--tt);letter-spacing:var(--ls);line-height:1}
+  .btns{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--on-accent);padding:15px 26px;border-radius:var(--rb);font-weight:600;font-size:1rem;line-height:1.2;transition:transform .2s ease,box-shadow .2s ease}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -10px color-mix(in srgb,var(--accent) 70%,transparent)}
+  .btn svg{width:20px;height:20px;flex:0 0 auto}
+  .btn.ghost{background:transparent;color:inherit;box-shadow:inset 0 0 0 1.5px currentColor}
+  .btn.ghost:hover{box-shadow:inset 0 0 0 1.5px currentColor}
+  .horario{font-size:1rem}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+  .pie{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:28px;padding-bottom:96px;color:var(--soft);font-size:.88rem}
+  .wa{position:fixed;right:18px;bottom:18px;z-index:50;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 24px rgba(0,0,0,.25)}
+  .demo-tag{position:fixed;left:16px;bottom:18px;z-index:50;background:var(--bg);color:var(--ink);font-size:.78rem;padding:8px 14px;border-radius:99px;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+  .demo-tag b{letter-spacing:.22em}
   @media (prefers-reduced-motion:reduce){
-    *,*::before,*::after{animation:none!important;transition:none!important}
-    .arco .foto img{opacity:1;transform:none}
+    *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition:none!important}
   }
 </style>
 </head>
 <body>
-<nav><span class="marca">Estética Norma Hurtado</span><a href="https://wa.me/528123256381?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Est%C3%A9tica%20Norma%20Hurtado%20y%20quiero%20informaci%C3%B3n." target="_blank" rel="noopener">Agenda tu cita</a></nav>
-
-<header class="hero wrap flip">
-  <div class="texto">
-    <p class="giro">Estética</p>
-    <h1>Realza tu belleza natural con confianza</h1>
-    <p class="intro">Descubre un espacio dedicado al cuidado personal que mereces. Agenda tu cita ahora y déjanos consentirte.</p>
-    <div class="btns">
-      <a class="btn" href="https://wa.me/528123256381?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Est%C3%A9tica%20Norma%20Hurtado%20y%20quiero%20informaci%C3%B3n." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>Mándanos un mensaje</a>
-      <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=25.7228432,-100.2674561" target="_blank" rel="noopener">Cómo llegar</a>
+<style>
+  .h-arco nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:26px 20px;max-width:1200px;margin:0 auto}
+  .h-arco nav .marca{font-family:var(--fd);font-weight:var(--wd);font-style:var(--fi);font-size:1.5rem}
+  .h-arco nav a{border-bottom:1px solid currentColor;padding-bottom:2px;white-space:nowrap}
+  .h-arco .grid{display:grid;grid-template-columns:7fr 5fr;gap:44px;align-items:center;padding-top:16px;padding-bottom:120px}
+  .h-arco.flip .grid{grid-template-columns:5fr 7fr}
+  .h-arco.flip .texto{order:2}
+  .h-arco .giro{color:var(--accent-t);margin-bottom:18px;font-weight:500}
+  .h-arco h1{font-size:calc(clamp(2.9rem,7.6vw,6.6rem) * var(--k));line-height:.98}
+  .h-arco .intro{font-size:1.1rem;max-width:40ch;margin:26px 0 34px;color:var(--soft)}
+  .h-arco .arco{position:relative;justify-self:center;width:100%;max-width:440px}
+  .h-arco .arco .foto{aspect-ratio:3/4;border-radius:999px 999px var(--rf) var(--rf);overflow:hidden}
+  .h-arco .arco .foto img{opacity:0;transform:scale(1.15);animation:ha-in 1.6s cubic-bezier(.2,.7,.2,1) forwards}
+  @keyframes ha-in{to{opacity:1;transform:none}}
+  .h-arco .arco .mini{position:absolute;width:40%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:8px solid var(--bg);bottom:-36px;left:-48px}
+  .h-arco .arco .firma{position:absolute;right:-34px;top:24px;writing-mode:vertical-rl;font-family:var(--fd);font-style:var(--fi);color:var(--soft);white-space:nowrap}
+  @media (max-width:860px){.h-arco .grid,.h-arco.flip .grid{grid-template-columns:1fr;padding-bottom:90px}.h-arco.flip .texto{order:0}.h-arco .arco{max-width:330px}.h-arco .arco .mini{left:-8px}.h-arco .arco .firma{display:none}}
+</style>
+<header class="h-arco flip">
+  <nav><span class="marca">Estética Norma Hurtado</span><a href="https://wa.me/528123256381?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Est%C3%A9tica%20Norma%20Hurtado%20y%20quiero%20informaci%C3%B3n." target="_blank" rel="noopener">Agenda tu cita</a></nav>
+  <div class="wrap grid">
+    <div class="texto">
+      <p class="giro">Estética</p>
+      <h1 class="d">Realza tu belleza natural con confianza</h1>
+      <p class="intro">Descubre un espacio pensado para tu cuidado personal. Agenda ahora tu cita y consiéntete.</p>
+      <div class="btns"><a class="btn" href="https://wa.me/528123256381?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Est%C3%A9tica%20Norma%20Hurtado%20y%20quiero%20informaci%C3%B3n." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>Mándanos WhatsApp</a><a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=25.7228432,-100.2674561" target="_blank" rel="noopener">Cómo llegar</a></div>
     </div>
-  </div>
-  <div class="arco">
-    <div class="foto"><img src="https://images.unsplash.com/photo-1626383137804-ff908d2753a2?auto=format&fit=crop&w=1400&q=75" alt=""></div>
-    <div class="mini"><img src="https://images.unsplash.com/photo-1695527081848-1e46c06e6458?auto=format&fit=crop&w=1400&q=75" alt=""></div>
-    <span class="firma">Estética Norma Hurtado</span>
+    <div class="arco">
+      <div class="foto"><img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=1400&q=75" alt=""></div>
+      <div class="mini"><img src="https://images.unsplash.com/photo-1746723378067-83a345ff3160?auto=format&fit=crop&w=1400&q=75" alt=""></div>
+      <span class="firma">Estética Norma Hurtado</span>
+    </div>
   </div>
 </header>
 
-<main>
-  <section class="manifiesto"><p>Brindamos atención personalizada para que te sientas bien en cada visita.</p></section>
-
-  <section class="servicios wrap">
-    <div class="lado">
-      <h2>Servicios</h2>
-      <p>Escríbenos y te ayudamos a elegir el que va contigo.</p>
+<style>
+  .s-carta{padding:110px 0}
+  .s-carta .grid{display:grid;grid-template-columns:4fr 8fr;gap:60px;align-items:start}
+  .s-carta h2{font-size:calc(clamp(2.4rem,5vw,4rem) * var(--k))}
+  .s-carta .lado p{color:var(--soft);margin-top:16px;max-width:30ch}
+  .s-carta .lado .foto{margin-top:34px;aspect-ratio:4/5;border-radius:var(--rf);overflow:hidden}
+  .s-carta .lado .foto img{transform:scale(1.08);transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+  .s-carta.visto .lado .foto img{transform:none}
+  .s-carta .items{display:grid;grid-template-columns:1fr 1fr;gap:0 44px}
+  .s-carta article{padding:28px 0;border-top:1px solid var(--line);opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease;transition-delay:calc(var(--i) * 90ms)}
+  .s-carta.visto article{opacity:1;transform:none}
+  .s-carta article:first-child{grid-column:span 2;padding-top:0;border-top:0}
+  .s-carta article:first-child h3{font-size:calc(clamp(1.9rem,3.6vw,2.8rem) * var(--k))}
+  .s-carta h3{font-family:var(--fd);font-weight:var(--wd);font-style:var(--fi);text-transform:var(--tt);letter-spacing:var(--ls);font-size:calc(1.6rem * var(--k));line-height:1.12}
+  .s-carta article p{color:var(--soft);margin-top:8px}
+  @media (max-width:860px){.s-carta{padding:80px 0}.s-carta .grid{grid-template-columns:1fr;gap:30px}.s-carta .lado .foto{aspect-ratio:16/10}.s-carta .items{grid-template-columns:1fr}.s-carta article:first-child{grid-column:auto}}
+</style>
+<section class="s-carta" data-rev>
+  <div class="wrap grid">
+    <div class="lado"><h2 class="d">Tratamientos</h2><p>Con calma, con cuidado y a tu gusto.</p><div class="foto"><img src="https://images.unsplash.com/photo-1695527081874-b674c46f40fb?auto=format&fit=crop&w=1400&q=75" alt="" loading="lazy"></div></div>
+    <div class="items">
+      
+      <article style="--i:1"><h3>Faciales hidratantes</h3><p>Tratamientos profundos para devolverle la luminosidad y frescura a la piel de tu rostro.</p></article>
+      
+      <article style="--i:2"><h3>Depilación con cera</h3><p>Técnicas cuidadosas para mantener tu piel suave por más tiempo de forma duradera.</p></article>
+      
+      <article style="--i:3"><h3>Masajes relajantes</h3><p>Sesiones diseñadas para liberar la tensión acumulada y relajar por completo tu cuerpo.</p></article>
+      
+      <article style="--i:4"><h3>Diseño de cejas</h3><p>Encuentra la forma ideal que enmarque tu mirada y potencie tus facciones naturales.</p></article>
+      
+      <article style="--i:5"><h3>Tratamientos corporales</h3><p>Opciones específicas para moldear, cuidar y consentir la piel de todo tu cuerpo.</p></article>
+      
     </div>
-    <div class="carta">
-      
-      <article><h3>Faciales hidratantes</h3><p>Tratamientos diseñados para devolverle la luminosidad y frescura a tu rostro todos los días.</p></article>
-      
-      <article><h3>Diseño de cejas</h3><p>Delineado y perfilado profesional para enmarcar tu mirada de forma natural y elegante.</p></article>
-      
-      <article><h3>Masajes relajantes</h3><p>Sesiones ideales para liberar la tensión acumulada y encontrar un momento de paz.</p></article>
-      
-      <article><h3>Depilación suave</h3><p>Métodos cuidadosos con tu piel para mantenerla tersa por más tiempo con gran comodidad.</p></article>
-      
-      <article><h3>Manicure y pedicure</h3><p>Cuidado completo para tus manos y pies con acabados impecables y productos seguros.</p></article>
-      
-    </div>
-  </section>
+  </div>
+</section>
 
-  <section class="galeria">
-    <div class="cabeza"><h2>Nuestro espacio</h2><span>Desliza</span></div>
-    <div class="pista">
+<style>
+  .f-marquee{overflow:hidden;padding:30px 0;margin:0 0 70px}
+  .f-marquee .banda{background:var(--accent);color:var(--on-accent);padding:22px 0;overflow:hidden;width:104%;margin-left:-2%;transform:rotate(1.3deg)}
+  .f-marquee .riel{display:flex;width:max-content;animation:fm-corre 28s linear infinite}
+  .f-marquee .riel div{display:flex;flex:0 0 auto}
+  .f-marquee span{font-family:var(--fd);font-weight:var(--wd);text-transform:var(--tt);letter-spacing:var(--ls);font-size:calc(clamp(1.6rem,3.4vw,2.6rem) * var(--k));line-height:1.1;white-space:nowrap;padding:0 26px;display:flex;align-items:center;gap:52px}
+  .f-marquee span::after{content:"/";font-family:var(--fb);font-size:.7em;opacity:.8}
+  @keyframes fm-corre{to{transform:translateX(-50%)}}
+  @media (max-width:860px){.f-marquee{margin-bottom:46px}}
+</style>
+<section class="f-marquee" aria-label="Estética">
+  <div class="banda"><div class="riel"><div><span>Cuidado facial</span><span>Bienestar</span><span>Relajación</span><span>Tratamientos</span><span>Confianza</span><span>Cuidado facial</span><span>Bienestar</span><span>Relajación</span><span>Tratamientos</span><span>Confianza</span></div><div aria-hidden="true"><span>Cuidado facial</span><span>Bienestar</span><span>Relajación</span><span>Tratamientos</span><span>Confianza</span><span>Cuidado facial</span><span>Bienestar</span><span>Relajación</span><span>Tratamientos</span><span>Confianza</span></div></div></div>
+</section>
+
+<style>
+  .g-grid{padding:30px 0 110px}
+  .g-grid .cabeza{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:30px}
+  .g-grid h2{font-size:calc(clamp(2.2rem,4.6vw,3.8rem) * var(--k))}
+  .g-grid .cabeza span{color:var(--soft)}
+  .g-grid .fotos{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .g-grid figure{aspect-ratio:1;overflow:hidden;border-radius:var(--rf);opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+  .g-grid figure:nth-child(2){transition-delay:.08s}.g-grid figure:nth-child(3){transition-delay:.16s}.g-grid figure:nth-child(4){transition-delay:.24s}.g-grid figure:nth-child(5){transition-delay:.32s}.g-grid figure:nth-child(6){transition-delay:.4s}
+  .g-grid.visto figure{opacity:1;transform:none}
+  .g-grid figure img{transition:transform .9s ease}
+  .g-grid figure:hover img{transform:scale(1.07)}
+  @media (max-width:860px){.g-grid{padding-bottom:80px}.g-grid .fotos{grid-template-columns:1fr 1fr;gap:8px}}
+</style>
+<section class="g-grid" data-rev>
+  <div class="wrap">
+    <div class="cabeza"><h2 class="d">Inspiración</h2><span>Estética Norma Hurtado</span></div>
+    <div class="fotos">
+      <figure><img src="https://images.unsplash.com/photo-1626383137804-ff908d2753a2?auto=format&fit=crop&w=1400&q=75" alt="" loading="lazy"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1695527081848-1e46c06e6458?auto=format&fit=crop&w=1400&q=75" alt="" loading="lazy"></figure>
       <figure><img src="https://images.unsplash.com/photo-1695527081874-b674c46f40fb?auto=format&fit=crop&w=1400&q=75" alt="" loading="lazy"></figure>
       <figure><img src="https://images.unsplash.com/photo-1637777277435-3c44f82fd0c9?auto=format&fit=crop&w=1400&q=75" alt="" loading="lazy"></figure>
       <figure><img src="https://images.unsplash.com/photo-1695527081827-fdbc4e77be9b?auto=format&fit=crop&w=1400&q=75" alt="" loading="lazy"></figure>
       <figure><img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=1400&q=75" alt="" loading="lazy"></figure>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="visita">
-    <div class="wrap">
-      <div>
-        <h2>Te esperamos</h2>
-        <ul>
-          
-          <li>Atención cercana y amable</li>
-          
-          <li>Ambiente limpio y tranquilo</li>
-          
-          <li>Productos de alta calidad</li>
-          
-        </ul>
-      </div>
-      <div>
+<style>
+  .c-ticket{padding:90px 0 110px}
+  .c-ticket .grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .c-ticket h2{font-size:calc(clamp(2.4rem,5.4vw,4.4rem) * var(--k))}
+  .c-ticket .izq p{color:var(--soft);margin:18px 0 28px;max-width:38ch}
+  .c-ticket .ticket{position:relative;background:var(--panel);color:var(--on-panel);border-radius:calc(var(--rf) / 2 + 8px);padding:34px 32px;transform:rotate(2deg);opacity:0;translate:0 40px;transition:opacity .8s ease,translate .8s cubic-bezier(.2,.8,.2,1)}
+  .c-ticket.visto .ticket{opacity:1;translate:0 0}
+  .c-ticket .ticket::before,.c-ticket .ticket::after{content:"";position:absolute;top:50%;width:28px;height:28px;border-radius:50%;background:var(--bg);transform:translateY(-50%)}
+  .c-ticket .ticket::before{left:-14px}
+  .c-ticket .ticket::after{right:-14px}
+  .c-ticket .ticket .cab{display:flex;justify-content:space-between;gap:14px;font-family:var(--fd);font-weight:var(--wd);text-transform:var(--tt);letter-spacing:var(--ls);font-size:calc(1.3rem * var(--k));padding-bottom:18px;border-bottom:2px dashed color-mix(in srgb,var(--on-panel) 40%,transparent)}
+  .c-ticket .ticket ul{list-style:none;padding:12px 0 18px;border-bottom:2px dashed color-mix(in srgb,var(--on-panel) 40%,transparent)}
+  .c-ticket .ticket li{display:flex;justify-content:space-between;gap:14px;padding:9px 0}
+  .c-ticket .ticket li::after{content:"\2713";color:var(--acc-p);font-weight:700}
+  .c-ticket .ticket .horario{padding-top:16px;opacity:.85;font-size:.95rem}
+  .c-ticket .ticket .total{padding-top:16px;display:flex;justify-content:space-between;font-weight:700}
+  @media (max-width:860px){.c-ticket{padding:70px 0 90px}.c-ticket .grid{grid-template-columns:1fr;gap:40px}.c-ticket .ticket{transform:rotate(1deg);margin:0 10px}}
+</style>
+<section class="c-ticket" data-rev>
+  <div class="wrap grid">
+    <div class="izq"><h2 class="d">Agenda tu cita</h2><p>Descubre un espacio pensado para tu cuidado personal. Agenda ahora tu cita y consiéntete.</p><div class="btns"><a class="btn" href="https://wa.me/528123256381?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Est%C3%A9tica%20Norma%20Hurtado%20y%20quiero%20informaci%C3%B3n." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>Mándanos WhatsApp</a><a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=25.7228432,-100.2674561" target="_blank" rel="noopener">Cómo llegar</a></div></div>
+    <div class="ticket" aria-label="Resumen">
+      <div class="cab"><span>Estética Norma Hurtado</span><span>N.º 001</span></div>
+      <ul>
         
-        <div class="btns">
-          <a class="btn" href="https://wa.me/528123256381?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Est%C3%A9tica%20Norma%20Hurtado%20y%20quiero%20informaci%C3%B3n." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>Mándanos un mensaje</a>
-          <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=25.7228432,-100.2674561" target="_blank" rel="noopener">Cómo llegar</a>
-        </div>
-      </div>
+        <li>Ambiente totalmente relajante</li>
+        
+        <li>Productos de alta calidad</li>
+        
+        <li>Tratamiento personalizado</li>
+        
+      </ul>
+      
+      <div class="total"><span>Citas</span><span>por WhatsApp</span></div>
     </div>
-  </section>
-</main>
-
-<footer><span>© 2026 Estética Norma Hurtado</span><span>Sitio hecho por crusol</span></footer>
+  </div>
+</section>
+<footer class="pie wrap"><span>© 2026 Estética Norma Hurtado</span><span>Sitio hecho por crusol</span></footer>
 <div class="demo-tag">Vista previa por <b>CRUSOL</b></div>
 <a class="wa" href="https://wa.me/528123256381?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Est%C3%A9tica%20Norma%20Hurtado%20y%20quiero%20informaci%C3%B3n." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg width="28" height="28" fill="#fff" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></a>
+<script>
+(function(){
+  var quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var obs = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visto'); obs.unobserve(e.target); } });
+  }, {threshold:.12, rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('[data-rev]').forEach(function(el){ if(quieto){ el.classList.add('visto'); } else { obs.observe(el); } });
+  if(quieto) return;
+  var capas = document.querySelectorAll('[data-parallax]');
+  if(!capas.length) return;
+  function mover(){
+    var h = window.innerHeight;
+    capas.forEach(function(el){
+      var r = el.parentNode.getBoundingClientRect();
+      var k = parseFloat(el.getAttribute('data-parallax')) || .15;
+      var y = (r.top + r.height/2 - h/2) * -k;
+      el.style.transform = 'translate3d(0,' + y.toFixed(1) + 'px,0)';
+    });
+  }
+  window.addEventListener('scroll', mover, {passive:true});
+  mover();
+})();
+</script>
 </body>
 </html>
