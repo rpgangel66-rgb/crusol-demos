@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Don Burgerss</title>
+<meta name="description" content="Hamburguesas jugosas y boneless crujientes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800&amp;family=Barlow:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#141414;--ink:#f5efe6;--accent:#ffcc33;--on-accent:#141414;--panel:#d63a22;--on-panel:#ffffff;--accent-t:#ffcc33;--acc-p:#ffcc33;--on-acc-p:#141414;
+    --soft:color-mix(in srgb,var(--ink) 66%,var(--bg));
+    --line:color-mix(in srgb,var(--ink) 15%,var(--bg));
+    --fd:'Big Shoulders Display',Impact,sans-serif;--fb:'Barlow',system-ui,sans-serif;--wd:800;--tt:uppercase;--ls:.01em;--k:1.08;--fi:normal;
+    --rb:12px;--rf:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;overflow-x:hidden;overflow-x:clip}
+  body{font-family:var(--fb);background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:clip;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img{display:block;width:100%;height:100%;object-fit:cover}
+  .wrap{max-width:1200px;margin:0 auto;padding-left:20px;padding-right:20px}
+  .d{font-family:var(--fd);font-weight:var(--wd);text-transform:var(--tt);letter-spacing:var(--ls);line-height:1}
+  .btns{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--on-accent);padding:15px 26px;border-radius:var(--rb);font-weight:600;font-size:1rem;line-height:1.2;transition:transform .2s ease,box-shadow .2s ease}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -10px color-mix(in srgb,var(--accent) 70%,transparent)}
+  .btn svg{width:20px;height:20px;flex:0 0 auto}
+  .btn.ghost{background:transparent;color:inherit;box-shadow:inset 0 0 0 1.5px currentColor}
+  .btn.ghost:hover{box-shadow:inset 0 0 0 1.5px currentColor}
+  .horario{font-size:1rem}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+  .pie{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:28px;padding-bottom:96px;color:var(--soft);font-size:.88rem}
+  .wa{position:fixed;right:18px;bottom:18px;z-index:50;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 24px rgba(0,0,0,.25)}
+  .demo-tag{position:fixed;left:16px;bottom:18px;z-index:50;background:var(--bg);color:var(--ink);font-size:.78rem;padding:8px 14px;border-radius:99px;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+  .demo-tag b{letter-spacing:.22em}
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition:none!important}
+  }
+</style>
+</head>
+<body>
+<style>
+  .h-collage{overflow:hidden;padding-bottom:70px}
+  .h-collage nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 20px;max-width:1200px;margin:0 auto}
+  .h-collage nav .marca{font-family:var(--fd);font-weight:var(--wd);text-transform:var(--tt);letter-spacing:var(--ls);font-size:1.25rem}
+  .h-collage nav a{box-shadow:inset 0 0 0 1.5px currentColor;padding:9px 18px;border-radius:var(--rb);font-weight:600;font-size:.92rem;white-space:nowrap}
+  .h-collage .centro{text-align:center;padding-top:56px;max-width:960px}
+  .h-collage .giro{color:var(--accent-t);font-weight:600;margin-bottom:14px}
+  .h-collage h1{font-size:calc(clamp(2.7rem,7vw,6rem) * var(--k));line-height:1}
+  .h-collage .intro{font-size:1.1rem;color:var(--soft);max-width:46ch;margin:22px auto 30px}
+  .h-collage .btns{justify-content:center}
+  .h-collage .fotos{position:relative;height:clamp(240px,40vw,500px);max-width:1200px;margin:56px auto 0}
+  .h-collage figure{position:absolute;overflow:hidden;border-radius:var(--rf);box-shadow:0 30px 60px -24px rgba(0,0,0,.45);width:31%;aspect-ratio:3/4;opacity:0;translate:0 90px;animation:hco-in 1s cubic-bezier(.2,.8,.2,1) forwards}
+  .h-collage .f1{left:3%;top:12%;rotate:-6deg;animation-delay:.1s}
+  .h-collage .f2{left:34.5%;top:0;z-index:2;animation-delay:.22s}
+  .h-collage .f3{right:3%;top:16%;rotate:5deg;animation-delay:.34s}
+  @keyframes hco-in{to{opacity:1;translate:0 0}}
+  @media (max-width:860px){.h-collage .fotos{height:62vw}.h-collage figure{width:38%}.h-collage .f2{left:31%}}
+</style>
+<header class="h-collage">
+  <nav><span class="marca">Don Burgerss</span><a href="https://wa.me/528123256381?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Don%20Burgerss%20y%20quiero%20informaci%C3%B3n." target="_blank" rel="noopener">Pedir ahora</a></nav>
+  <div class="centro wrap">
+    <p class="giro">Hamburguesas</p>
+    <h1 class="d">Hamburguesas jugosas y boneless crujientes</h1>
+    <p class="intro">Preparamos las mejores hamburguesas y antojitos para calmar tu hambre ahora mismo. Ven a disfrutar de un gran sabor en cada mordida.</p>
+    <div class="btns"><a class="btn" href="https://wa.me/528123256381?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Don%20Burgerss%20y%20quiero%20informaci%C3%B3n." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>Pedir por WhatsApp</a><a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=25.7556877,-100.265464" target="_blank" rel="noopener">Cómo llegar</a></div>
+  </div>
+  <div class="fotos">
+    <figure class="f1"><img src="https://images.unsplash.com/photo-1610970878459-a0e464d7592b?auto=format&fit=crop&w=1400&q=75" alt=""></figure>
+    <figure class="f2"><img src="https://images.unsplash.com/photo-1667329829058-ac191ba4a905?auto=format&fit=crop&w=1400&q=75" alt=""></figure>
+    <figure class="f3"><img src="https://images.unsplash.com/photo-1644447381290-85358ae625cb?auto=format&fit=crop&w=1400&q=75" alt=""></figure>
+  </div>
+</header>
+
+<style>
+  .f-marquee{overflow:hidden;padding:30px 0;margin:0 0 70px}
+  .f-marquee .banda{background:var(--accent);color:var(--on-accent);padding:22px 0;overflow:hidden;width:104%;margin-left:-2%;transform:rotate(-1.6deg)}
+  .f-marquee .riel{display:flex;width:max-content;animation:fm-corre 28s linear infinite}
+  .f-marquee .riel div{display:flex;flex:0 0 auto}
+  .f-marquee span{font-family:var(--fd);font-weight:var(--wd);text-transform:var(--tt);letter-spacing:var(--ls);font-size:calc(clamp(1.6rem,3.4vw,2.6rem) * var(--k));line-height:1.1;white-space:nowrap;padding:0 26px;display:flex;align-items:center;gap:52px}
+  .f-marquee span::after{content:"✦";font-family:var(--fb);font-size:.7em;opacity:.8}
+  @keyframes fm-corre{to{transform:translateX(-50%)}}
+  @media (max-width:860px){.f-marquee{margin-bottom:46px}}
+</style>
+<section class="f-marquee" aria-label="Hamburguesas">
+  <div class="banda"><div class="riel"><div><span>Hamburguesas</span><span>Boneless</span><span>Hot dogs</span><span>Papas</span><span>Bebidas</span><span>Hamburguesas</span><span>Boneless</span><span>Hot dogs</span><span>Papas</span><span>Bebidas</span></div><div aria-hidden="true"><span>Hamburguesas</span><span>Boneless</span><span>Hot dogs</span><span>Papas</span><span>Bebidas</span><span>Hamburguesas</span><span>Boneless</span><span>Hot dogs</span><span>Papas</span><span>Bebidas</span></div></div></div>
+</section>
+
+<style>
+  .s-menu{background:var(--panel);color:var(--on-panel);padding:100px 0;margin:0 12px;border-radius:calc(var(--rf) + 10px)}
+  .s-menu .cabeza{text-align:center;max-width:680px;margin:0 auto 54px}
+  .s-menu .eti{display:inline-block;color:var(--acc-p);font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:.8rem;margin-bottom:14px}
+  .s-menu h2{font-size:calc(clamp(2.6rem,6vw,4.8rem) * var(--k))}
+  .s-menu .cabeza p{opacity:.8;margin-top:14px}
+  .s-menu .platos{display:grid;grid-template-columns:1fr 1fr;gap:0 64px;max-width:1040px;margin:0 auto}
+  .s-menu article{display:flex;gap:18px;align-items:flex-start;justify-content:space-between;padding:24px 0;border-top:1px dashed color-mix(in srgb,var(--on-panel) 35%,transparent);opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;transition-delay:calc(var(--i) * 80ms)}
+  .s-menu.visto article{opacity:1;transform:none}
+  .s-menu h3{font-family:var(--fd);font-weight:var(--wd);text-transform:var(--tt);letter-spacing:var(--ls);font-size:calc(1.45rem * var(--k));line-height:1.1}
+  .s-menu article p{opacity:.78;margin-top:6px;font-size:.98rem}
+  .s-menu .pedir{flex:0 0 auto;font-size:.85rem;font-weight:700;padding:8px 14px;border-radius:var(--rb);background:var(--on-panel);color:var(--panel);transition:transform .2s}
+  .s-menu .pedir:hover{transform:translateY(-2px)}
+  @media (max-width:860px){.s-menu{padding:72px 0;margin:0 8px}.s-menu .platos{grid-template-columns:1fr}}
+</style>
+<section class="s-menu" data-rev>
+  <div class="wrap">
+    <div class="cabeza"><span class="eti">Hamburguesas</span><h2 class="d">Lo que más piden</h2><p>Recién hecho y con el sazón de siempre.</p></div>
+    <div class="platos">
+      
+      <article style="--i:1"><div><h3>Hamburguesa clásica con queso</h3><p>Carne jugosa a la parrilla, queso derretido, jitomate, lechuga fresca y aderezo de la casa.</p></div><a class="pedir" href="https://wa.me/528123256381?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Don%20Burgerss%20y%20quiero%20informaci%C3%B3n." target="_blank" rel="noopener">Pedir</a></article>
+      
+      <article style="--i:2"><div><h3>Boneless picantes</h3><p>Trocitos de pollo empanizados y bañados en salsa picante, acompañados de aderezo ranch.</p></div><a class="pedir" href="https://wa.me/528123256381?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Don%20Burgerss%20y%20quiero%20informaci%C3%B3n." target="_blank" rel="noopener">Pedir</a></article>
+      
+      <article style="--i:3"><div><h3>Hot dog gigante</h3><p>Salchicha estilo americano con tocino crujiente, jitomate, cebolla y aderezos clásicos.</p></div><a class="pedir" href="https://wa.me/528123256381?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Don%20Burgerss%20y%20quiero%20informaci%C3%B3n." target="_blank" rel="noopener">Pedir</a></article>
+      
+      <article style="--i:4"><div><h3>Papas a la francesa</h3><p>Papas doraditas y crujientes por fuera, suaves por dentro, con un toque de sal.</p></div><a class="pedir" href="https://wa.me/528123256381?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Don%20Burgerss%20y%20quiero%20informaci%C3%B3n." target="_blank" rel="noopener">Pedir</a></article>
+      
+      <article style="--i:5"><div><h3>Malteada de chocolate</h3><p>Bebida cremosa y dulce, preparada con helado artesanal y crema batida encima.</p></div><a class="pedir" href="https://wa.me/528123256381?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Don%20Burgerss%20y%20quiero%20informaci%C3%B3n." target="_blank" rel="noopener">Pedir</a></article>
+      
+    </div>
+  </div>
+</section>
+
+<style>
+  .g-cinta{padding:10px 0 110px;overflow:hidden}
+  .g-cinta h2{font-size:calc(clamp(2.2rem,4.6vw,3.8rem) * var(--k));margin-bottom:30px}
+  .g-cinta .riel{display:flex;gap:14px;width:max-content;animation:gc-corre 46s linear infinite}
+  .g-cinta:hover .riel{animation-play-state:paused}
+  .g-cinta figure{width:clamp(220px,26vw,330px);aspect-ratio:4/5;border-radius:var(--rf);overflow:hidden;flex:0 0 auto}
+  .g-cinta figure:nth-child(odd){aspect-ratio:1;align-self:center}
+  @keyframes gc-corre{to{transform:translateX(-50%)}}
+  @media (max-width:860px){.g-cinta{padding-bottom:80px}}
+</style>
+<section class="g-cinta">
+  <div class="wrap"><h2 class="d">Recién servido</h2></div>
+  <div class="riel">
+    <figure><img src="https://images.unsplash.com/photo-1644447381290-85358ae625cb?auto=format&fit=crop&w=1400&q=75" alt="" loading="lazy"></figure><figure><img src="https://images.unsplash.com/photo-1644447295447-31af467e866a?auto=format&fit=crop&w=1400&q=75" alt="" loading="lazy"></figure><figure><img src="https://images.unsplash.com/photo-1644447295446-19b7e712a895?auto=format&fit=crop&w=1400&q=75" alt="" loading="lazy"></figure><figure><img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=1400&q=75" alt="" loading="lazy"></figure><figure><img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1400&q=75" alt="" loading="lazy"></figure><figure><img src="https://images.unsplash.com/photo-1667329829058-ac191ba4a905?auto=format&fit=crop&w=1400&q=75" alt="" loading="lazy"></figure>
+    <figure aria-hidden="true"><img src="https://images.unsplash.com/photo-1644447381290-85358ae625cb?auto=format&fit=crop&w=1400&q=75" alt="" loading="lazy"></figure><figure aria-hidden="true"><img src="https://images.unsplash.com/photo-1644447295447-31af467e866a?auto=format&fit=crop&w=1400&q=75" alt="" loading="lazy"></figure><figure aria-hidden="true"><img src="https://images.unsplash.com/photo-1644447295446-19b7e712a895?auto=format&fit=crop&w=1400&q=75" alt="" loading="lazy"></figure><figure aria-hidden="true"><img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=1400&q=75" alt="" loading="lazy"></figure><figure aria-hidden="true"><img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1400&q=75" alt="" loading="lazy"></figure><figure aria-hidden="true"><img src="https://images.unsplash.com/photo-1667329829058-ac191ba4a905?auto=format&fit=crop&w=1400&q=75" alt="" loading="lazy"></figure>
+  </div>
+</section>
+
+<style>
+  .c-banda{background:var(--panel);color:var(--on-panel);padding:100px 0 0;border-radius:calc(var(--rf) + 14px) calc(var(--rf) + 14px) 0 0}
+  .c-banda .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:end;padding-bottom:70px}
+  .c-banda h2{font-size:calc(clamp(2.6rem,6vw,5rem) * var(--k))}
+  .c-banda ul{list-style:none;margin-top:30px}
+  .c-banda li{display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid color-mix(in srgb,var(--on-panel) 18%,transparent);font-size:1.1rem}
+  .c-banda li::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--acc-p);flex:0 0 auto}
+  .c-banda .horario{opacity:.8;margin-bottom:24px}
+  .c-banda .btn{background:var(--on-panel);color:var(--panel)}
+  .c-banda .btn.ghost{background:transparent;color:var(--on-panel)}
+  .c-banda + .pie{background:var(--panel);color:color-mix(in srgb,var(--on-panel) 70%,var(--panel));max-width:none;padding-left:max(20px,calc((100vw - 1160px) / 2));padding-right:max(20px,calc((100vw - 1160px) / 2))}
+  @media (max-width:860px){.c-banda{padding-top:76px}.c-banda .grid{grid-template-columns:1fr;gap:34px}}
+</style>
+<section class="c-banda">
+  <div class="wrap grid">
+    <div><h2 class="d">Pide ahora</h2><ul>
+      
+      <li>Sabor casero irresistible</li>
+      
+      <li>Ingredientes siempre frescos</li>
+      
+      <li>Porciones que satisfacen tu hambre</li>
+      
+    </ul></div>
+    <div><div class="btns"><a class="btn" href="https://wa.me/528123256381?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Don%20Burgerss%20y%20quiero%20informaci%C3%B3n." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>Pedir por WhatsApp</a><a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=25.7556877,-100.265464" target="_blank" rel="noopener">Cómo llegar</a></div></div>
+  </div>
+</section>
+<footer class="pie wrap"><span>© 2026 Don Burgerss</span><span>Sitio hecho por crusol</span></footer>
+<div class="demo-tag">Vista previa por <b>CRUSOL</b></div>
+<a class="wa" href="https://wa.me/528123256381?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Don%20Burgerss%20y%20quiero%20informaci%C3%B3n." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg width="28" height="28" fill="#fff" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></a>
+<script>
+(function(){
+  var quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var obs = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visto'); obs.unobserve(e.target); } });
+  }, {threshold:.12, rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('[data-rev]').forEach(function(el){ if(quieto){ el.classList.add('visto'); } else { obs.observe(el); } });
+  if(quieto) return;
+  var capas = document.querySelectorAll('[data-parallax]');
+  if(!capas.length) return;
+  function mover(){
+    var h = window.innerHeight;
+    capas.forEach(function(el){
+      var r = el.parentNode.getBoundingClientRect();
+      var k = parseFloat(el.getAttribute('data-parallax')) || .15;
+      var y = (r.top + r.height/2 - h/2) * -k;
+      var tope = r.height * .1;
+      y = Math.max(-tope, Math.min(tope, y));
+      el.style.transform = 'translate3d(0,' + y.toFixed(1) + 'px,0)';
+    });
+  }
+  window.addEventListener('scroll', mover, {passive:true});
+  mover();
+})();
+</script>
+</body>
+</html>
