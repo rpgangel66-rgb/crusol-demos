@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Allium Flower Shop</title>
+<meta name="description" content="Flores frescas para cada momento especial">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f2ece3;--ink:#26201c;--accent:#8f6a3c;--on-accent:#ffffff;--panel:#26201c;--on-panel:#f2ece3;--accent-t:#8f6a3c;--acc-p:#8f6a3c;--on-acc-p:#ffffff;
+    --soft:color-mix(in srgb,var(--ink) 66%,var(--bg));
+    --line:color-mix(in srgb,var(--ink) 15%,var(--bg));
+    --fd:'Instrument Serif',Georgia,serif;--fb:'Instrument Sans',system-ui,sans-serif;--wd:400;--tt:none;--ls:-.01em;--k:1.12;--fi:italic;
+    --rb:3px;--rf:0px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;overflow-x:hidden;overflow-x:clip}
+  body{font-family:var(--fb);background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:clip;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img{display:block;width:100%;height:100%;object-fit:cover}
+  .wrap{max-width:1200px;margin:0 auto;padding-left:20px;padding-right:20px}
+  .d{font-family:var(--fd);font-weight:var(--wd);text-transform:var(--tt);letter-spacing:var(--ls);line-height:1}
+  .btns{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--on-accent);padding:15px 26px;border-radius:var(--rb);font-weight:600;font-size:1rem;line-height:1.2;transition:transform .2s ease,box-shadow .2s ease}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -10px color-mix(in srgb,var(--accent) 70%,transparent)}
+  .btn svg{width:20px;height:20px;flex:0 0 auto}
+  .btn.ghost{background:transparent;color:inherit;box-shadow:inset 0 0 0 1.5px currentColor}
+  .btn.ghost:hover{box-shadow:inset 0 0 0 1.5px currentColor}
+  .horario{font-size:1rem}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+  .pie{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:28px;padding-bottom:96px;color:var(--soft);font-size:.88rem}
+  .wa{position:fixed;right:18px;bottom:18px;z-index:50;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 24px rgba(0,0,0,.25)}
+  .demo-tag{position:fixed;left:16px;bottom:18px;z-index:50;background:var(--bg);color:var(--ink);font-size:.78rem;padding:8px 14px;border-radius:99px;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+  .demo-tag b{letter-spacing:.22em}
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition:none!important}
+  }
+</style>
+</head>
+<body>
+<style>
+  .h-panel{padding-bottom:70px}
+  .h-panel .barra{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px;max-width:1200px;margin:0 auto}
+  .h-panel .barra .marca{font-family:var(--fd);font-weight:var(--wd);text-transform:var(--tt);letter-spacing:var(--ls);font-size:1.3rem}
+  .h-panel .barra a{background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:var(--rb);font-weight:600;font-size:.95rem;white-space:nowrap}
+  .h-panel .caja{background:var(--panel);color:var(--on-panel);border-radius:calc(var(--rf) + 14px);margin:0 12px;padding-top:64px;overflow:hidden}
+  .h-panel .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:end}
+  .h-panel.flip .texto{order:2}
+  .h-panel .giro{display:inline-block;background:var(--acc-p);color:var(--on-acc-p);padding:6px 14px;border-radius:var(--rb);font-weight:600;font-size:.9rem;margin-bottom:22px}
+  .h-panel h1{font-size:calc(clamp(2.7rem,7vw,6rem) * var(--k))}
+  .h-panel .intro{font-size:1.12rem;max-width:40ch;margin:22px 0 30px;opacity:.88}
+  .h-panel .btns{padding-bottom:60px}
+  .h-panel .plato{position:relative;align-self:end}
+  .h-panel .plato .foto{aspect-ratio:1;border-radius:50% 50% 0 0;overflow:hidden;opacity:0;transform:translateY(40px);animation:hp-sirve 1.1s cubic-bezier(.2,.8,.2,1) .15s forwards}
+  @keyframes hp-sirve{to{opacity:1;transform:none}}
+  .h-panel .sello{position:absolute;top:5%;left:-3%;width:128px;height:128px;animation:hp-gira 18s linear infinite}
+  .h-panel .sello circle{fill:var(--acc-p)}
+  .h-panel .btn:not(.ghost){background:var(--acc-p);color:var(--on-acc-p)}
+  .h-panel .sello text{font-family:var(--fb);font-size:11.5px;font-weight:700;letter-spacing:.14em;fill:var(--on-acc-p)}
+  @keyframes hp-gira{to{transform:rotate(360deg)}}
+  @media (max-width:860px){.h-panel .grid{grid-template-columns:1fr}.h-panel.flip .texto{order:0}.h-panel .btns{padding-bottom:16px}.h-panel .sello{width:96px;height:96px;left:2%}}
+</style>
+<header class="h-panel flip">
+  <div class="barra"><span class="marca">Allium Flower Shop</span><a href="https://wa.me/528123256381?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Allium%20Flower%20Shop%20y%20quiero%20informaci%C3%B3n." target="_blank" rel="noopener">Hacer pedido</a></div>
+  <div class="caja"><div class="wrap grid">
+    <div class="texto">
+      <span class="giro">Florería</span>
+      <h1 class="d">Flores frescas para cada momento especial</h1>
+      <p class="intro">Descubre nuestros arreglos florales diseñados con dedicación para alegrar tus espacios. Haz tu pedido ahora y recibe flores llenas de vida.</p>
+      <div class="btns"><a class="btn" href="https://wa.me/528123256381?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Allium%20Flower%20Shop%20y%20quiero%20informaci%C3%B3n." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>Pedir por WhatsApp</a><a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=25.6523089,-100.2794715" target="_blank" rel="noopener">Cómo llegar</a></div>
+    </div>
+    <div class="plato">
+      <div class="foto"><img src="https://images.unsplash.com/photo-1718568698986-eb9045432622?auto=format&fit=crop&w=1400&q=75" alt=""></div>
+      <svg class="sello" viewBox="0 0 132 132" aria-hidden="true"><defs><path id="sello-c" d="M66,66 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0"/></defs><circle cx="66" cy="66" r="64"/><text><textPath href="#sello-c">FLORES · DETALLES · FLORES · DETALLES ·</textPath></text></svg>
+    </div>
+  </div></div>
+</header>
+
+<style>
+  .g-grande{position:relative;height:min(86vh,760px);overflow:hidden;margin:20px 0 110px;color:#fff}
+  .g-grande .capa{position:absolute;left:0;right:0;top:-14%;bottom:-14%}
+  .g-grande::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.66))}
+  .g-grande .pie-foto{position:absolute;left:0;right:0;bottom:0;z-index:2;padding-bottom:44px;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+  .g-grande .pie-foto p{font-family:var(--fd);font-weight:var(--wd);font-style:var(--fi);text-transform:var(--tt);letter-spacing:var(--ls);font-size:calc(clamp(1.8rem,4vw,3.4rem) * var(--k));line-height:1.05;max-width:18ch;opacity:0;transform:translateY(30px);transition:opacity .9s ease .2s,transform .9s ease .2s}
+  .g-grande.visto .pie-foto p{opacity:1;transform:none}
+  .g-grande .pie-foto span{opacity:.85;font-size:.95rem}
+  @media (max-width:860px){.g-grande{height:70vh;margin-bottom:80px}}
+</style>
+<section class="g-grande" data-rev>
+  <div class="capa" data-parallax=".18"><img src="https://images.unsplash.com/photo-1589244159943-460088ed5c92?auto=format&fit=crop&w=1400&q=75" alt="" loading="lazy"></div>
+  <div class="wrap pie-foto"><p>Diseños únicos y naturales</p><span>Allium Flower Shop</span></div>
+</section>
+
+<style>
+  .s-filas{padding:100px 0}
+  .s-filas .cabeza{margin-bottom:40px}
+  .s-filas h2{font-size:calc(clamp(2.4rem,5vw,4.2rem) * var(--k))}
+  .s-filas .cabeza p{color:var(--soft);margin-top:12px;max-width:44ch}
+  .s-filas .fila{position:relative;display:grid;grid-template-columns:70px 1.2fr 1fr;gap:24px;align-items:center;padding:30px 20px;border-top:1px solid var(--line);overflow:hidden;isolation:isolate;opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease,color .35s ease;transition-delay:calc(var(--i) * 80ms),calc(var(--i) * 80ms),0s}
+  .s-filas .fila:last-child{border-bottom:1px solid var(--line)}
+  .s-filas.visto .fila{opacity:1;transform:none}
+  .s-filas .fila::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.6,0,.2,1)}
+  .s-filas .fila:hover{color:var(--on-accent)}
+  .s-filas .fila:hover::before{transform:scaleX(1)}
+  .s-filas .num{font-weight:700;opacity:.6}
+  .s-filas h3{font-family:var(--fd);font-weight:var(--wd);text-transform:var(--tt);letter-spacing:var(--ls);font-size:calc(clamp(1.6rem,3.2vw,2.6rem) * var(--k));line-height:1.05}
+  .s-filas .fila p{opacity:.8}
+  @media (max-width:860px){.s-filas{padding:76px 0}.s-filas .fila{grid-template-columns:44px 1fr;padding:24px 8px}.s-filas .fila p{grid-column:2}}
+</style>
+<section class="s-filas" data-rev>
+  <div class="wrap">
+    <div class="cabeza"><h2 class="d">Para cada ocasión</h2><p>Con calma, con cuidado y a tu gusto.</p></div>
+    
+    <div class="fila" style="--i:1"><span class="num">01</span><h3>Arreglos para cumpleaños</h3><p>Diseños coloridos y alegres ideales para celebrar un año más de vida con estilo.</p></div>
+    
+    <div class="fila" style="--i:2"><span class="num">02</span><h3>Rosas rojas clásicas</h3><p>El detalle perfecto para expresar amor y romanticismo en cualquier fecha importante.</p></div>
+    
+    <div class="fila" style="--i:3"><span class="num">03</span><h3>Centros de mesa</h3><p>Composiciones florales elegantes diseñadas para realzar la decoración de tus reuniones y eventos.</p></div>
+    
+    <div class="fila" style="--i:4"><span class="num">04</span><h3>Flores de condolencia</h3><p>Coronas y arreglos sobrios para mostrar respeto y apoyo en momentos difíciles.</p></div>
+    
+    <div class="fila" style="--i:5"><span class="num">05</span><h3>Armados personalizados</h3><p>Elige tus flores favoritas y nosotros creamos un diseño exclusivo a tu gusto.</p></div>
+    
+  </div>
+</section>
+
+<style>
+  .f-marquee{overflow:hidden;padding:30px 0;margin:0 0 70px}
+  .f-marquee .banda{background:var(--accent);color:var(--on-accent);padding:22px 0;overflow:hidden;width:104%;margin-left:-2%;transform:rotate(-1.6deg)}
+  .f-marquee .riel{display:flex;width:max-content;animation:fm-corre 28s linear infinite}
+  .f-marquee .riel div{display:flex;flex:0 0 auto}
+  .f-marquee span{font-family:var(--fd);font-weight:var(--wd);text-transform:var(--tt);letter-spacing:var(--ls);font-size:calc(clamp(1.6rem,3.4vw,2.6rem) * var(--k));line-height:1.1;white-space:nowrap;padding:0 26px;display:flex;align-items:center;gap:52px}
+  .f-marquee span::after{content:"•";font-family:var(--fb);font-size:.7em;opacity:.8}
+  @keyframes fm-corre{to{transform:translateX(-50%)}}
+  @media (max-width:860px){.f-marquee{margin-bottom:46px}}
+</style>
+<section class="f-marquee" aria-label="Florería">
+  <div class="banda"><div class="riel"><div><span>Frescura garantizada</span><span>Diseños originales</span><span>Calidad en cada detalle</span><span>Momentos inolvidables</span><span>Amor por las flores</span><span>Frescura garantizada</span><span>Diseños originales</span><span>Calidad en cada detalle</span><span>Momentos inolvidables</span><span>Amor por las flores</span></div><div aria-hidden="true"><span>Frescura garantizada</span><span>Diseños originales</span><span>Calidad en cada detalle</span><span>Momentos inolvidables</span><span>Amor por las flores</span><span>Frescura garantizada</span><span>Diseños originales</span><span>Calidad en cada detalle</span><span>Momentos inolvidables</span><span>Amor por las flores</span></div></div></div>
+</section>
+
+<style>
+  .c-centro{padding:110px 0 90px;text-align:center;border-top:1px solid var(--line)}
+  .c-centro h2{font-size:calc(clamp(2.8rem,8vw,6.4rem) * var(--k));max-width:14ch;margin:0 auto;line-height:.98}
+  .c-centro .horario{color:var(--soft);margin-top:22px}
+  .c-centro .btns{justify-content:center;margin-top:34px}
+  .c-centro ul{list-style:none;display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:54px}
+  .c-centro li{padding:10px 18px;border-radius:var(--rb);box-shadow:inset 0 0 0 1.5px var(--line);font-weight:500;opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;transition-delay:calc(var(--i) * 120ms + .2s)}
+  .c-centro.visto li{opacity:1;transform:none}
+  @media (max-width:860px){.c-centro{padding:80px 0 70px}}
+</style>
+<section class="c-centro" data-rev>
+  <div class="wrap">
+    <h2 class="d">Sorprende a alguien</h2>
+    <p class="horario">Horario: Lun a Vie 09:00 a 18:00, Sáb 10:00 a 15:00</p>
+    <div class="btns"><a class="btn" href="https://wa.me/528123256381?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Allium%20Flower%20Shop%20y%20quiero%20informaci%C3%B3n." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>Pedir por WhatsApp</a><a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=25.6523089,-100.2794715" target="_blank" rel="noopener">Cómo llegar</a></div>
+    <ul>
+      
+      <li style="--i:1">Flores siempre frescas</li>
+      
+      <li style="--i:2">Diseños únicos y naturales</li>
+      
+      <li style="--i:3">Atención cálida y cercana</li>
+      
+    </ul>
+  </div>
+</section>
+<footer class="pie wrap"><span>© 2026 Allium Flower Shop</span><span>Sitio hecho por crusol</span></footer>
+<div class="demo-tag">Vista previa por <b>CRUSOL</b></div>
+<a class="wa" href="https://wa.me/528123256381?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Allium%20Flower%20Shop%20y%20quiero%20informaci%C3%B3n." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg width="28" height="28" fill="#fff" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></a>
+<script>
+(function(){
+  var quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var obs = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visto'); obs.unobserve(e.target); } });
+  }, {threshold:.12, rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('[data-rev]').forEach(function(el){ if(quieto){ el.classList.add('visto'); } else { obs.observe(el); } });
+  if(quieto) return;
+  var capas = document.querySelectorAll('[data-parallax]');
+  if(!capas.length) return;
+  function mover(){
+    var h = window.innerHeight;
+    capas.forEach(function(el){
+      var r = el.parentNode.getBoundingClientRect();
+      var k = parseFloat(el.getAttribute('data-parallax')) || .15;
+      var y = (r.top + r.height/2 - h/2) * -k;
+      var tope = r.height * .1;
+      y = Math.max(-tope, Math.min(tope, y));
+      el.style.transform = 'translate3d(0,' + y.toFixed(1) + 'px,0)';
+    });
+  }
+  window.addEventListener('scroll', mover, {passive:true});
+  mover();
+})();
+</script>
+</body>
+</html>
